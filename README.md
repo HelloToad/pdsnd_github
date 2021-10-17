@@ -1,17 +1,14 @@
->**Note**: Please **fork** the current Udacity repository so that you will have a **remote** repository in **your** Github account. Clone the remote repository to your local machine. Later, as a part of the project "Post your Work on Github", you will push your proposed changes to the remote repository in your Github account.
+Introduction
+This project is part of Udacitys program "Programming for Data Science with Python". It is designed to parse through the bike sharing data of three major cities - Chicago, New York City and Washington.
+Before showing any kind of data the user is being asked for which city and timeframes he/she wants to filter for.
 
-### Date created
-Include the date you created this project and README file.
+Files
+Each .csv file contains information about [Start Time | End Time | Trip Duration | Start Station | End Station | User Type | Gender | Birth Year]
+for each trip that occurred in one city (Chicago/New York City/Washington). The file for Washington doesn't contain any information about Gender and Birth Year.
 
-### Project Title
-Replace the Project Title
+Application
+The application was coded using Python, Numpy, Pandas
 
-### Description
-Describe what your project is about and what it does
-
-### Files used
-Include the files used
-
-### Credits
-It's important to give proper credit. Add links to any repo that inspired you or blogposts you consulted.
-
+Used Ressources
+The Python Standard Library
+Pandas Documentation
