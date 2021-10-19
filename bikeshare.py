@@ -17,7 +17,7 @@ def get_filters():
     """
     print('Hello! Let\'s explore some US bikeshare data!')
 
-    # TO DO: get user input for city (chicago, new york city, washington). HINT: Use a while loop to handle invalid inputs
+    # get user input for city (chicago, new york city, washington). HINT: Use a while loop to handle invalid inputs
     # adapted from here: https://python-forum.io/thread-9200.html
     while True:
         city = input("Enter the name of the city you want to inspect\n(\"chicago\", \"new york city\" or \"washington\"): ").lower()
@@ -27,8 +27,8 @@ def get_filters():
         else:
             print("\nInvalid city name\n")
 
-    # TO DO: get user input for month (all, january, february, ... , june)
-    # TO DO: get user input for day of week (all, monday, tuesday, ... sunday)
+    # get user input for month (all, january, february, ... , june)
+    # get user input for day of week (all, monday, tuesday, ... sunday)
     # Cheat Sheet page 8 and https://stackoverflow.com/questions/21082037/when-making-a-very-simple-multiple-choice-story-in-python-can-i-call-a-line-to
     # In hindsight maybe it would've been better to implement lists of the months/days
     while True:
@@ -98,15 +98,15 @@ def time_stats(df):
     print('\nCalculating The Most Frequent Times of Travel...\n')
     start_time = time.time()
 
-    # TO DO: display the most common month
+    # display the most common month
     popular_month = df['month'].mode()[0]
     print('Most Popular Month:', popular_month)
 
-    # TO DO: display the most common day of week
+    # display the most common day of week
     popular_weekday = df['month'].mode()[0]
     print('Most Popular Month:', popular_month)
 
-    # TO DO: display the most common start hour
+    # display the most common start hour
     df['hour'] = df['Start Time'].dt.hour
     popular_hour = df['hour'].mode()[0]
     print('Most Popular Start Hour:', popular_hour)
@@ -120,21 +120,21 @@ def station_stats(df):
     print('\nCalculating The Most Popular Stations and Trip...\n')
     start_time = time.time()
 
-    # TO DO: display most commonly used start station
+    # display most commonly used start station
     popular_startstation = df['Start Station'].mode()[0]
     print('Most Popular "Start Station":', popular_startstation)
 
-    # TO DO: display most commonly used end station
+    # display most commonly used end station
     popular_endstation = df['End Station'].mode()[0]
     print('Most Popular "End Station":', popular_endstation)
 
-    # TO DO: display most frequent combination of start station and end station trip
+    # display most frequent combination of start station and end station trip
     # https://knowledge.udacity.com/questions/263877 + https://knowledge.udacity.com/questions/169734 (adding delimeter)
     df['Start / End Combined'] = df['Start Station'] + ' + ' + df['End Station']
     popular_stationcombination = df['Start / End Combined'].mode()[0]
     print('Most Frequently Combined Start/End Stations:', popular_stationcombination)
 
-    
+
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
 
@@ -144,16 +144,16 @@ def trip_duration_stats(df):
     print('\nCalculating Trip Duration...\n')
     start_time = time.time()
 
-    # TO DO: display total travel time
+    # display total travel time
     # Loading Data into a pandas DataFrame; Example 12
     total_travel_time = df['Trip Duration'].sum()
     print('Total Travel Time:', total_travel_time)
 
-    # TO DO: display mean travel time
+    # display mean travel time
     mean_travel_time = df['Trip Duration'].mean()
     print('Mean Travel Time:', mean_travel_time)
-    
-    
+
+
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
 
@@ -164,17 +164,17 @@ def user_stats(df):
     start_time = time.time()
 
     # Practice Problem #2: Display a Breakdown of User Types
-    # TO DO: Display counts of user types
+    # Display counts of user types
     user_type_count = df['User Type'].value_counts()
     print(user_type_count)
 
-    # TO DO: Display counts of gender
+    # Display counts of gender
     # https://knowledge.udacity.com/questions/474771
     # cheatsheet page 14; failing silently for KeyError
     try:
         gender_count = df['Gender'].value_counts()
         print(gender_count)
-        # TO DO: Display earliest, most recent, and most common year of birth
+        # Display earliest, most recent, and most common year of birth
         # https://knowledge.udacity.com/questions/86491
         earliest_YOB = df['Birth Year'].min()
         recent_YOB = df['Birth Year'].max()
