@@ -4,6 +4,11 @@ Before showing any kind of data, the user is being asked for which city and time
 
 How to Use:
 Run the application using Python and the terminal will promptly ask for user input. Depending on the input the raw data will be filtered/computed.
+It is possible to yield information about:
+- most common month/day of week/hour of day
+- most common start station/end station/trip from start to end
+- trip durations (travel time/average travel time)
+- see raw data
 
 Files:
 Each .csv file contains information about [Start Time | End Time | Trip Duration | Start Station | End Station | User Type | Gender | Birth Year]
