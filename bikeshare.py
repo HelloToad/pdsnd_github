@@ -179,6 +179,9 @@ def user_stats(df):
         earliest_YOB = df['Birth Year'].min()
         recent_YOB = df['Birth Year'].max()
         common_YOB = df['Birth Year'].mode()[0]
+        print("The earliest year of birth is ", earliest_YOB, "\n")
+        print("The most recent year of birth is ", recent_YOB, "\n")
+        print("The most common year of birth is ", common_YOB, "\n")
     except KeyError:
         pass
 
