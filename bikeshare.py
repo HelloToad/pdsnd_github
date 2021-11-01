@@ -99,17 +99,14 @@ def time_stats(df):
     start_time = time.time()
 
     # display the most common month
-    popular_month = df['month'].mode()[0]
-    print('Most Popular Month:', popular_month)
+    print('Most Popular Month:', df['month'].mode()[0])
 
     # display the most common day of week
-    popular_weekday = df['month'].mode()[0]
-    print('Most Popular Month:', popular_month)
+    print('Most Popular Month:', df['month'].mode()[0])
 
     # display the most common start hour
     df['hour'] = df['Start Time'].dt.hour
-    popular_hour = df['hour'].mode()[0]
-    print('Most Popular Start Hour:', popular_hour)
+    print('Most Popular Start Hour:', df['hour'].mode()[0])
 
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
@@ -121,18 +118,15 @@ def station_stats(df):
     start_time = time.time()
 
     # display most commonly used start station
-    popular_startstation = df['Start Station'].mode()[0]
-    print('Most Popular "Start Station":', popular_startstation)
+    print('Most Popular "Start Station":', df['Start Station'].mode()[0])
 
     # display most commonly used end station
-    popular_endstation = df['End Station'].mode()[0]
-    print('Most Popular "End Station":', popular_endstation)
+    print('Most Popular "End Station":', df['End Station'].mode()[0])
 
     # display most frequent combination of start station and end station trip
     # https://knowledge.udacity.com/questions/263877 + https://knowledge.udacity.com/questions/169734 (adding delimeter)
     df['Start / End Combined'] = df['Start Station'] + ' + ' + df['End Station']
-    popular_stationcombination = df['Start / End Combined'].mode()[0]
-    print('Most Frequently Combined Start/End Stations:', popular_stationcombination)
+    print('Most Frequently Combined Start/End Stations:', df['Start / End Combined'].mode()[0])
 
 
     print("\nThis took %s seconds." % (time.time() - start_time))
@@ -146,13 +140,10 @@ def trip_duration_stats(df):
 
     # display total travel time
     # Loading Data into a pandas DataFrame; Example 12
-    total_travel_time = df['Trip Duration'].sum()
-    print('Total Travel Time:', total_travel_time)
+    print('Total Travel Time:', df['Trip Duration'].sum())
 
     # display mean travel time
-    mean_travel_time = df['Trip Duration'].mean()
-    print('Mean Travel Time:', mean_travel_time)
-
+    print('Mean Travel Time:', df['Trip Duration'].mean())
 
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
@@ -165,8 +156,7 @@ def user_stats(df):
 
     # Practice Problem #2: Display a Breakdown of User Types
     # Display counts of user types
-    user_type_count = df['User Type'].value_counts()
-    print(user_type_count)
+    print(df['User Type'].value_counts())
 
     # Display counts of gender
     # https://knowledge.udacity.com/questions/474771
